@@ -289,13 +289,13 @@ function buildDragPositionUpdates({
 }: {
 	snapshot: DragElementSnapshot;
 	position: Point;
-}): Partial<TimelineElement> {
+}): Partial<VisualElement> {
 	const hasAnimatedPosition =
 		snapshot.hasAnimatedPositionX || snapshot.hasAnimatedPositionY;
 	const hasStaticPosition =
 		!snapshot.hasAnimatedPositionX || !snapshot.hasAnimatedPositionY;
 	let animations = snapshot.animations;
-	const updates: Partial<TimelineElement> = {};
+	const updates: Partial<VisualElement> = {};
 
 	if (snapshot.hasAnimatedPositionX) {
 		animations = upsertPositionKeyframe({
